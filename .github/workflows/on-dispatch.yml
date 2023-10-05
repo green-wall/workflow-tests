@@ -1,0 +1,21 @@
+on:
+    workflow_dispatch:
+        inputs:
+            build_changed_files_file:
+                description: "changed files"
+                required: true
+                default: 'file.001.txt'
+            build_checkout_dir:
+                description: 'checkout dir'
+                required: true
+                default: 'workspace-001'
+            build_config_name:
+                description: 'configuration name'
+                required: true
+                default: 'config-abc'
+jobs:
+    hello:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "hello"
+            run: echo "hello"
